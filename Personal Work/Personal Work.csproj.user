@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartArguments>Face01.PNG Face02.PNG Face03.PNG Face04.PNG Face05.PNG Face06.PNG Face07.PNG Face08.PNG Face09.PNG Face10.PNG</StartArguments>
+  </PropertyGroup>
+</Project>
