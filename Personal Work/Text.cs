@@ -41,6 +41,19 @@ class Text
 
 	public void TextShow(int X, int Y)
 	{
+		Debug.Assert(X != 0);
+		Debug.Assert(Y != 0);
+
+		if(X<0)
+		{
+			X *= -1;
+		}
+
+		if(Y<0)
+		{
+			Y *= -1;
+		}
+
 		//전체로 읽어온 죄인 정보를 줄 단위로 나눔
 		string[] Story = TextArray.Split(Check, StringSplitOptions.RemoveEmptyEntries);
 
