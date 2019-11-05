@@ -46,12 +46,7 @@ class Player
 
 	public Player(int ID, int Confidence, int Reputation, int Point)
 	{
-		Debug.Assert(ID != 0);	//ID가 0이면 터짐
-
-		if(ID<0)
-		{
-			ID *= -1;			//ID가 마이너스 값이면 -1를 곱해서 양수로 만듬
-		}
+		Debug.Assert(ID > 0);	//ID 값이 0 이하면 터짐
 
 		this.ID = ID;
 		this.Confidence = Confidence;

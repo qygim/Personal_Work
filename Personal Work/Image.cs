@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-class Image
+class Image	//이미지 그리려다가 문제 생겨서 안씁니다.
 {
 	// 그림 그리는 구조체
 	struct RenderChar

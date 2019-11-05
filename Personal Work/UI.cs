@@ -7,9 +7,8 @@ using System.Diagnostics;
 
 class UI
 {
-	//박스를 전부 width,height에 기반해서 길이와 좌표를 계산한게 아니라 전체 콘솔 넓이를 150,40이라고 고정 할 때 DrawBox인자를 매직넘버로 줬습니다...수치들이 애매해 계산하기 머리깨져서...ㅇ<-<...
-	int Width;
-	int Height;
+	//콘솔크기가 150,40 고정이라 Drawbox 인자값을 매직넘버로 그냥 줬습니다. 
+	
 	bool[] Check;       //해당 정보가 열람 됐는지 안됐는지를 체크
 	int InocenceConfi;     //양심 증가 수치(무죄시)
 	int InocenceRepu;      //평판 증가 수치(무죄시)
@@ -49,10 +48,6 @@ class UI
 
 	public UI(int Width, int Height)
 	{
-		//UI의 Width,Height값은 Stage Class의 Width,Height값을 받아오므로 따로 예외처리 검사할 필요없음.만약 터지면 Stage에서 터질거임
-		this.Width = Width;
-		this.Height = Height;
-
 		InfoCheck = new bool[3];
 		for (int i = 0; i < 3; i++)
 		{
@@ -81,31 +76,6 @@ class UI
 	//박스를 그리는 공통 함수
 	private void DrawBox(int X, int Y, int Width, int Height)
 	{
-		//인자를 매직넘버로 줬다지만 예외처리부분은 넣어야겠다!!
-		Debug.Assert(X != 0);
-		Debug.Assert(Y != 0);
-		Debug.Assert(Width != 0);
-		Debug.Assert(Height != 0);
-
-		if (X<0)
-		{
-			X *= -1;
-		}
-
-		if (Y<0)
-		{
-			Y *= -1;
-		}
-
-		if (Width<0)
-		{
-			Width *= -1;
-		}
-
-		if (Height<0)
-		{
-			Height *= -1;
-		}
 
 		Console.SetCursorPosition(X, Y);
 		Console.Write('┌');
@@ -208,19 +178,6 @@ class UI
 		//플레이어의 양심과 평판 정도,스테이지 클리어를 위한 최저 양심,최저 평판 수치를 그리는 함수
 		void DrawPlayerGauge(ConsoleColor Color, int Value, int X, int Y)
 		{
-			Debug.Assert(X != 0);
-			Debug.Assert(Y != 0);
-
-			if(X<0)
-			{
-				X *= -1;
-			}
-
-			if(Y<0)
-			{
-				Y *= -1;
-			}
-
 			Console.SetCursorPosition(X, Y);
 			Console.BackgroundColor = Color;
 			for (int i = 0; i < (int)(Value * 0.1); i++)
@@ -305,19 +262,7 @@ class UI
 		//청중들의 상태에 따라 청중 기분을 다른 색으로 그림
 		void DrawAudienceState(AudienceState State, int X, int Y)
 		{
-			Debug.Assert(X != 0);
-			Debug.Assert(Y != 0);
 			Debug.Assert(State != AudienceState.None);
-
-			if(X<0)
-			{
-				X *= -1;
-			}
-
-			if(Y<0)
-			{
-				Y *= -1;
-			}
 
 			int PositionX = X;
 

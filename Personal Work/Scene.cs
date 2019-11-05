@@ -9,18 +9,17 @@ class Scene
 	Player Player;
 	Intro Intro;
 	Outtro Outtro;
-	//Image Image;
 	UI UI;
 	Audience Audience;
 
 	public Scene()
 	{
-		Console.SetWindowSize(150, 40);
-		TableManager.CreateInstance();
-		Stage.CreateInstance(70, 35, '■');
+		Console.SetWindowSize(150, 40);		//콘솔 사이즈 150,40으로 고정
+		TableManager.CreateInstance();													
+		Stage.CreateInstance(Console.WindowWidth/2-5, Console.WindowHeight-5, '■');
 		Player = new Player(1, 0, 0, 0);
-		Intro = new Intro(70, 20);
-		Outtro = new Outtro(70, 20);
+		Intro = new Intro(Console.WindowWidth/2-5, Console.WindowHeight/2);
+		Outtro = new Outtro(Console.WindowWidth / 2 - 5, Console.WindowHeight / 2);
 		//Image = new Image();
 		UI = new UI(Stage.Ins().GetWidth, Stage.Ins().GetHeight);
 		Audience = new Audience();
@@ -41,7 +40,7 @@ class Scene
 					break;
 				}
 
-				Console.SetCursorPosition(70, 20);
+				Console.SetCursorPosition(Console.WindowWidth/2-5, Console.WindowHeight/2);
 				//스테이지 단계 표시
 				Console.Write("Stage {0}", Stage.Ins().StageCount);
 				//해당 스테이지의 데이터를 얻어옴
@@ -67,8 +66,6 @@ class Scene
 			{
 				Stage.Ins().Render();
 				UI.Render(Stage.Ins().CurrentSinnerID, Player, Audience);
-				Console.SetCursorPosition(99, 15);
-				//Image.Draw(Args, Stage.CurrentSinnerID);
 			}
 		}
 
@@ -244,7 +241,7 @@ class Scene
 		else
 		{
 			Console.Clear();
-			Console.SetCursorPosition(65, 20);
+			Console.SetCursorPosition(Console.WindowWidth/2, Console.WindowHeight/2);
 			Console.Write("See you Next!");
 			Console.ReadLine();
 			Environment.Exit(0);

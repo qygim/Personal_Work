@@ -34,12 +34,7 @@ class Sinner
 
 	public Sinner(int ID)
 	{
-		Debug.Assert(ID != 0);
-
-		if(ID<0)
-		{
-			ID *= -1;
-		}
+		Debug.Assert(ID > 0); //ID값이 0이하면 터짐
 
 		this.ID = ID;
 	}

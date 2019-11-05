@@ -94,20 +94,6 @@ class Stage
 
 	private Stage(int Width, int Height, char C)
 	{
-		//높이나 넓이가 0이면 터짐
-		Debug.Assert(Width != 0);
-		Debug.Assert(Height != 0);
-
-		if(Width<0)
-		{
-			Width *= -1;
-		}
-
-		if(Height<0)
-		{
-			Height *= -1;
-		}
-
 		this.Width = Width;
 		this.Height = Height;
 		this.C = C;
