@@ -14,6 +14,7 @@ class Scene
 
 	public Scene()
 	{
+		Console.CursorVisible = false;		//커서 안보이게 하기
 		Console.SetWindowSize(150, 40);		//콘솔 사이즈 150,40으로 고정
 		TableManager.CreateInstance();													
 		Stage.CreateInstance(Console.WindowWidth/2-5, Console.WindowHeight-5, '■');
